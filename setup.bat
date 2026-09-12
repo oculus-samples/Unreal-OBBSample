@@ -51,20 +51,20 @@ if not exist "%DEFAULT_ENGINE_INI_FILE%" (
     EXIT /B 1
 )
 
-powershell -File scripts\Set-IniVal.ps1 -IniKey PackageName -IniVal %MY_PACKAGE_NAME% -IniPath %DEFAULT_ENGINE_INI_FILE% || (
+powershell -File scripts\Set-IniVal.ps1 -IniKey PackageName -IniVal %MY_PACKAGE_NAME% -IniPath "%DEFAULT_ENGINE_INI_FILE%" || (
     echo "Failed to set PackageName in DefaultEngine.ini"
     EXIT /B 1
 )
-powershell -File scripts\Set-IniVal.ps1 -IniKey KeyAlias -IniVal %MY_KEYSTORE_ALIAS% -IniPath %DEFAULT_ENGINE_INI_FILE% || (
+powershell -File scripts\Set-IniVal.ps1 -IniKey KeyAlias -IniVal %MY_KEYSTORE_ALIAS% -IniPath "%DEFAULT_ENGINE_INI_FILE%" || (
     echo "Failed to set KeyAlias in DefaultEngine.ini"
     EXIT /B 1
 )
-powershell -File scripts\Set-IniVal.ps1 -IniKey KeyStorePassword -IniVal %MY_KEYSTORE_PASSWORD% -IniPath %DEFAULT_ENGINE_INI_FILE% || (
+powershell -File scripts\Set-IniVal.ps1 -IniKey KeyStorePassword -IniVal %MY_KEYSTORE_PASSWORD% -IniPath "%DEFAULT_ENGINE_INI_FILE%" || (
     echo "Failed to set KeyStorePassword in DefaultEngine.ini"
     EXIT /B 1
 )
 
-if not exist %UNREALEDITOR_CMD_EXE% (
+if not exist "%UNREALEDITOR_CMD_EXE%" (
     echo "UnrealEditor-Cmd.exe not found at %UNREALEDITOR_CMD_EXE%"
     EXIT /B 1
 )

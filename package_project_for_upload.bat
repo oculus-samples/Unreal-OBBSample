@@ -24,12 +24,12 @@ call "%~dp0config.bat" || (
 )
 
 if exist "%MY_SHIPPING_DIR%\" (
-    rmdir /s /q %MY_SHIPPING_DIR% || (
+    rmdir /s /q "%MY_SHIPPING_DIR%" || (
         echo "failed to remove existing %MY_SHIPPING_DIR% directory and any potential existing builds, aborting."
         EXIT /B 1
     )
 )
-mkdir %MY_SHIPPING_DIR% || (
+mkdir "%MY_SHIPPING_DIR%" || (
     echo "failed to create %MY_SHIPPING_DIR% directory, aborting."
     EXIT /B 1
 )
